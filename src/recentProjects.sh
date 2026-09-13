@@ -39,7 +39,44 @@ fi
 #     DB="$DB_OLD"
 # fi
 
-# Search Recent Projects
-get_vscode_recent_alfred "$QUERY"
+# 调用函数
+expanded_path=$(is_path "$QUERY")
+ret=$?
+
+if [ $ret -eq 0 ]; then
+    # 输入是路径（~/xxx 或者 /xxx），expanded_path 是完整绝对路径
+    if [[ -d "$expanded_path" ]]; then
+        # 文件夹存在，直接返回Alfred item
+        echo '{"items": [
+        {
+            "uid": "",
+            "type": "",
+            "title": "Your Search exists",
+            "subtitle": "Your Search exists.",
+            "arg": "",
+            "autocomplete": "",
+        }]}'
+    else
+        # 路径格式合法，但文件夹不存在
+        echo '{"items": [
+        {
+            "uid": "",
+            "type": "",
+            "title": "Your Search does not exist",
+            "subtitle": "Your Search does not exist.",
+            "arg": "",
+            "icon": {
+                "path": "./warning.png"
+            },
+            "autocomplete": "",
+        }]}'
+    fi
+else
+    # 普通关键词，执行mdfind搜索
+    # Search Recent Projects
+    get_vscode_recent_alfred "$QUERY"
+fi
+
+
 
 
