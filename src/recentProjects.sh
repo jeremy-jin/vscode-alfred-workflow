@@ -52,7 +52,7 @@ if [ $ret -eq 0 ]; then
             "uid": "",
             "type": "",
             "title": "Your Search exists",
-            "subtitle": "Your Search exists.",
+            "subtitle": "'"$QUERY"'",
             "arg": "",
             "autocomplete": "",
         }]}'
@@ -63,7 +63,7 @@ if [ $ret -eq 0 ]; then
             "uid": "",
             "type": "",
             "title": "Your Search does not exist",
-            "subtitle": "Your Search does not exist.",
+            "subtitle": "try another search",
             "arg": "",
             "icon": {
                 "path": "./warning.png"
