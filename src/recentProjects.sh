@@ -2,8 +2,12 @@
 source .config
 source errors.sh
 source utils.sh
+source ./update-check.sh
 
 QUERY=$1
+
+# Check for workflow updates
+check_workflow_update
 
 # Check If App is already installed
 if [ ! -r "$APP_PATH" ]; then
