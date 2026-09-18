@@ -5,7 +5,7 @@ MANIFEST_URL="https://raw.githubusercontent.com/jeremy-jin/vscode-alfred-workflo
 CACHE_DIR="${alfred_workflow_cache}"
 CACHE_DATE="${CACHE_DIR}/last_check_date.txt"
 CACHE_IGNORE_VER="${CACHE_DIR}/ignored_version.txt"
-TEMP_FILE_PREFIX="com.jeremy.alfred.open-pycharm"
+TEMP_FILE_PREFIX="com.jeremy.alfred.open-vscode"
 # =========================================
 
 # 版本比较函数：version_gt A B，A>B 返回0(true)
@@ -94,7 +94,7 @@ check_workflow_update() {
       # osascript 弹窗，捕获弹窗异常
       CHOICE=""
       if ! CHOICE=$(osascript <<EOF 2>/dev/null
-set opt to button returned of (display dialog "发现新版本 ${REMOTE_VER}\n当前版本：${LOCAL_VER}" buttons {"Ignore this version", "Remind tomorrow", "Install now"} default button "Install now" with title "Alfred Workflow Update (Quickly Open Project With PyCharm)")
+set opt to button returned of (display dialog "发现新版本 ${REMOTE_VER}\n当前版本：${LOCAL_VER}" buttons {"Ignore this version", "Remind tomorrow", "Install now"} default button "Install now" with title "Alfred Workflow Update (Quickly Open Project With VSCode)")
 return opt
 EOF
       ); then
