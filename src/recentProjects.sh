@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source .config
+source config
 source errors.sh
 source utils.sh
 source ./update-check.sh
