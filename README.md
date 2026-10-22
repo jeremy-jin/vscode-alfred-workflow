@@ -21,7 +21,7 @@ You need:
 - Visual Studo Code version 1.118.0+
 
 ### Installation
-Download [Visual Studio Code Workflow for Alfred](./package/alfred-open-pycharm.alfredworkflow?raw=true), double-click the `.alfredworkflow` file to install it in Alfred.
+Download [Visual Studio Code Workflow for Alfred](https://raw.githubusercontent.com/jeremy-jin/vscode-alfred-workflow/master/package/alfred-open-vscode.alfredworkflow), double-click the `.alfredworkflow` file to install it in Alfred.
 
 **If 'code' is not recognized as an internal or external command?**
 
